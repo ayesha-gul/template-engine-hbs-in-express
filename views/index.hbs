@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {{!-- <link rel="stylesheet" href="style.css"> --}}
+</head>
+<body>
+    <style>
+        *{margin: 0; padding: 0; font-family: sans-serif; text-transform: capitalize;}
+#header{
+    height: 100vh;
+    background-image: url(images/background.png);
+    background-size: cover;
+    background-position: center;
+}
+.container{
+
+    margin-right: 100px;
+    margin-left: 100px;
+}
+.logo{
+    margin-top: 30px;
+    width: 100px;
+}
+.head-text{
+    max-width: 350px;
+    margin-top: 140px;
+ 
+}
+h1 {
+    font-size: 24px;
+}
+.square {
+    height: 12px;
+    width: 12px;
+    display: inline-block;
+    background: #f67c92;
+    margin: 15px 0;
+}
+.btn{
+    padding: 18px 40px;
+    background: transparent;
+    outline: none;
+    border: 2px solid #f67c92;
+    font-weight: bold;
+    cursor: pointer;
+   
+}
+p {
+    font-size: 15px;
+    line-height: 18px;
+    color: #777;
+}
+.head-text button{
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+.line1 {
+    width: 15px;
+    height: 15px;
+    background: #f67c92;
+    display: inline-block;
+}
+.line2 {
+    width: 80px;
+    height: 1px;
+    background: #f67c92;
+    display: inline-block;
+}
+.line3 {
+    width: 60px;
+    height: 1px;
+    background: #f67c92;
+    display: inline-block;
+}
+.line{
+    line-height: 8px;
+}
+#sideBar{
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    right:-250px;
+    top: 0;
+    background: #f67c92;
+    z-index: 2;
+    transition: 0.5s;
+}
+nav ul li {
+    list-style: none;
+    margin: 50px 20px;
+}
+nav ul li a{
+    text-decoration: none;
+    color: #fff;
+}
+#menuBtn{
+    width: 50px;
+    position: fixed;
+    right: 65px;
+    top: 35px;
+    cursor: pointer;
+    z-index: 2;
+}
+.about{
+    display: flex;
+    padding: 100px 0;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.left-col{
+    flex-basis: 50%;
+}
+.left-col img {
+    width: 100%;
+}
+.right-col{
+    flex-basis: 50%;
+    text-align: right;
+}
+.about-text{
+    max-width: 500px;
+    margin-right: 100px;
+    display: inline-block;
+
+}
+.about-text h2{
+    margin: 50px 0 10px;
+    font-size: 28px;
+    font-style: italic;
+    text-transform: capitalize;
+
+}
+.about-text h3{
+    font-size: 20px;
+    font-style: italic;
+    text-transform: capitalize;
+    color: #797979;
+}
+.features{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.row{
+ width: 80%;
+ margin: auto;
+ display: flex;
+ align-items: center;
+ justify-content: space-around;
+ flex-wrap: wrap;
+
+}
+.feat-col{
+    flex-basis: 25%;
+    text-align: center;
+
+}
+.feat-btn{
+    margin: 80px auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.feat-btn .line{
+    text-align: right;
+    display: inline-block;
+    margin-right: 25px;
+}
+
+.course{
+    padding: 100px 0;
+
+}
+.cr{
+    display: flex;
+    align-items: center;
+    flex-wrap:wrap ;
+}
+.c-right{
+    flex-basis: 50%;
+}
+.c-right img{
+    width: 100%;
+}
+.c-left{
+    flex-basis: 50%;
+}
+.ctext{
+    max-width: 350px;
+}
+.ctext button{
+    margin: 30px 0;
+}
+#offer button{
+margin: 30px 0;
+}
+.conr{
+    display: flex;
+ align-items: center;
+ flex-wrap: wrap;
+}
+.conr-left,.conr-right{
+    flex-basis: 50%;
+}
+.conr-right img{
+    width: 100%;
+}
+form{
+    max-width: 350px;
+    margin: 30px 0;
+ 
+}
+form input{
+    width: 100%;
+    padding: 12px 10px;
+    margin-bottom: 5px;
+    outline: none;
+    box-shadow: none;
+    box-sizing: border-box;
+    border: 2px solid #f67c92;
+}
+.btn-box{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.btn-box button{
+    flex-basis: 48%;
+    padding: 18px 0;
+}
+.set{
+    margin-left: 80px;
+}
+
+.footer{
+    padding: 50px 0 30px;
+
+}
+hr{
+    width: 100%;
+    border: 0;
+    border-top: 1px solid #f67c92;
+}
+.fr{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-left: 80px;
+}
+.f-left{
+    flex-basis: 50%;
+    margin-top: 60px;
+}
+.f-right{
+    flex-basis: 35%;
+}
+.flinks{
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+}
+.link-title h4{
+    color: #fab3c4;
+    margin-bottom: 20px;
+}
+.link-title small{
+    font-size: 13px;
+    color: #777;
+}
+.finfo{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+}
+.flogo img{
+    width: 100px;
+}
+.flogo button{
+    padding: 12px 38px;
+margin-top: 20px;
+    font-size: 10px;
+}
+.ftext,.flogo{
+    flex-basis: 40%;
+}
+.icons{
+    width: 50px;
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+.icons img{
+    display: block;
+    width: 20px;
+    margin: 0 auto 20px;
+    cursor: pointer;
+}
+
+    </style>
+    <section id="header">
+        <div class="container">
+            <img src="images/logo.png"  class="logo">
+            <div class="head-text">
+                <h1>The purpose is to <br> teach,bring learning
+                   <br> to people.
+                </h1>
+                <span class="square"></span>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                     Veniam quos iusto odio similique cupiditate eos laborum,
+                      nemo quidem eveniet, quibusdam 
+                      amet natus tenetur cum excepturi.</p>
+                      <button class="btn">Read More</button>
+                      <div class="line">
+                          <span class="line1"></span> <br>
+                          <span class="line2"></span> <br>
+                          <span class="line3"></span>
+                      </div>
+            </div>
+        </div>
+    </section>
+
+    <nav id="sideBar">
+        <ul>
+            <li><a href="#"> Home</a></li>
+            <li><a href="#"> About US</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">Offer</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <img src="images/menu.png" id="menuBtn">
+
+    <section class="about">
+        <div class="left-col">
+            <img src="images/about.png" >
+        </div>
+        <div class="right-col">
+             <div class="about-text">
+                 <h1>{{AboutUs}}</h1>
+                 <span class="square"></span>
+                 <p>Lorem ipsum dolor sit amet consectetur 
+                     adipisicing elit. Illum beatae explicabo
+                      earum at dignissimos aliquam magnam corrupti 
+                      nostrum asperiores deleniti. Eveniet vero 
+                      incidunt  magnam corrupti 
+                      nostrum asperiores deleniti. Eveniet vero 
+                      incidunt quidem fuga commodi cum natus 
+                      nesciunt nobis officiis earum, ullam, esse 
+                      atque ipsam sapiente saepe perferendis amet 
+                      magnam nostrum! Placeat, reiciendis? 
+                     Aliquam provident ab est quaerat ratione?</p><br>
+                     <div class="line">
+                        <span class="line1"></span> <br>
+                        <span class="line2"></span> <br>
+                        <span class="line3"></span>
+                    </div>
+
+                     <h2>"learning is not to attained by chance,it must be sought 
+                         for with ardor and atteded to with delligence"</h2>
+                         <h3>----Abigil Admas</h3>
+             </div>
+        </div>
+    </section>
+
+
+    <section class="features">
+        <div class="row">
+            <div class="feat-col">
+                <img src="images/pic-1.png" >
+                <h4>Learn ANyWhere</h4>
+                <p>Swtich between your computer,tablet or mobile</p>
+            </div>
+            <div class="feat-col">
+                <img src="images/pic-2.png" >
+                <h4>Expert Teachers</h4>
+                <p>Slearn from industry experts who are passionate about
+                    teaching
+                </p>
+            </div>
+        
+            <div class="feat-col">
+                <img src="images/pic-3.png" >
+                <h4>unlimited access</h4>
+                <p>choose what you'd like to learn from our experts
+                    subcription library
+                </p>
+            </div>
+            </div>
+            <div class="feat-btn">
+                <div class="line">
+                    <span class="line1"></span> <br>
+                    <span class="line2"></span> <br>
+                    <span class="line3"></span>
+                </div>
+                <button class="btn">Start Free trial</button>
+            </div>
+      
+    </section>
+
+    <section class="course">
+        <div class="container cr">
+            <div class="c-left">
+               <div class="ctext">
+                   <h1>
+                       Browse our top <br>Courses
+                   </h1>
+                   <span class="square"></span>
+                   <p>Lorem ipsum dolor sit, amet consectetur 
+                       adipisicing elit. Aspernatur dignissimos, 
+                       similique obcaecati totam saepe ea officiis 
+                       repellat dolor excepturi asperiores ab sit!
+                        Error quisquam voluptatibus dolor vero.</p>
+                          <button class="btn">View Courses</button>
+                        <div class="line">
+                            <span class="line1"></span> <br>
+                            <span class="line2"></span> <br>
+                            <span class="line3"></span>
+                        </div>
+               </div>
+
+            </div>
+            <div class="c-right">
+                <img src="images/course.png" >
+            </div>
+        </div>
+    </section>
+
+
+    <section class="about " id="offer">
+        <div class="left-col">
+            <img src="images/offer.png" >
+        </div>
+        <div class="right-col">
+             <div class="about-text">
+                 <h1>Limitless learning,<br>Limitless possiblites</h1>
+                 <span class="square"></span>
+                 <p>Lorem ipsum dolor sit amet consectetur 
+                     adipisicing elit. Illum beatae explicabo
+                      earum at dignissimos aliquam magnam corrupti 
+                      nostrum asperiores deleniti. Eveniet vero 
+                      nesciunt nobis officiis earum, ullam, esse 
+                      atque ipsam sapiente saepe perferendis amet 
+                      magnam nostrum! Placeat, reiciendis? 
+                     Aliquam provident ab est quaerat ratione?</p>
+
+                     <button class="btn">Start free trial</button>
+                     <div class="line">
+                        <span class="line1"></span> <br>
+                        <span class="line2"></span> <br>
+                        <span class="line3"></span>
+                    </div>
+
+                  
+             </div>
+        </div>
+    </section>
+
+    <div class="contact">
+        <div class="conr">
+            <div class="conr-left">
+
+                <div class="set">
+                <h1>Sign up to join our <br> learning community</h1>
+                <form >
+                    <input type="text" placeholder="Enter Name">
+                    <input type="email" placeholder="Enter Your Mail">
+                    <input type="password" placeholder="Enter Password">
+                <div class="btn-box">
+                    <button class="btn">Sign Up</button>
+                  <button class="btn">Start Free Trial</button>
+                </div>
+                </form>
+                <div class="line">
+                    <span class="line1"></span> <br>
+                    <span class="line2"></span> <br>
+                    <span class="line3"></span>
+                </div>
+
+            </div>
+
+            </div>
+            <div class="conr-right">
+                <img src="images/contact.png">
+            </div>
+        </div>
+    </div>
+
+
+    <section class="footer">
+        <div class="continer fr">
+            <hr>
+        <div class="f-left">
+           <div class="flinks">
+               <div class="link-title">
+                   <h4>products</h4>
+                   <small>our plan</small> <br>
+                   <small>free trial</small>
+               </div>
+
+               <div class="link-title">
+                <h4>about us</h4>
+                <small>request demo</small><br>
+                <small>faqs</small>
+            </div>
+
+            <div class="link-title">
+                <h4>support</h4>
+                <small>features</small><br>
+                <small>contact us</small>
+            </div>
+
+            <div class="link-title">
+                <h4>explore</h4>
+                <small>find  nonprofit</small><br>
+                <small>coprate solution</small>
+            </div>
+           </div>
+        </div>
+        <div class="f-right">
+          <div class="finfo">
+              <div class="ftext">
+                  <small>support@Xypo.com</small>
+                  <small>copyright 2021 Xypo</small>
+              </div>
+              <div class="flogo">
+                  <img src="images/logo.png" alt="">
+               <button class="btn">English</button>
+                </div>
+          </div>
+        </div>
+        </div>
+    </section>
+
+    <div class="icons">
+        <img src="images/facebook.png" alt="">
+    <img src="images/instagram.png" alt="">
+   <img src="images/twitter.png" alt="">
+   <img src="images/linkedin.png" alt="">
+   
+    </div>
+    
+<script src="script.js"></script>
+   
+</body>
+</html>
